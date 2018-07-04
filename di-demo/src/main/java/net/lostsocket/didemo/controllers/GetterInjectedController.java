@@ -15,7 +15,7 @@ public class GetterInjectedController {
     }
 
     @Autowired
-    public void setGreetingService(GreetingServiceImplementation2 greetingService) {
+    public void setGreetingService(GreetingService greetingService) {
         this.greetingService = greetingService;
     }
 }
