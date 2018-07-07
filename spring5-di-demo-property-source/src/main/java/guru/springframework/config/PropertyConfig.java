@@ -24,7 +24,7 @@ public class PropertyConfig {
     String url;
 
     @Bean
-    public FakeDataSource fakeDataSource(){
+    public FakeDataSource fakeDataSource() {
         FakeDataSource fakeDataSource = new FakeDataSource();
         fakeDataSource.setUser(user);
         fakeDataSource.setPassword(password);
@@ -33,8 +33,8 @@ public class PropertyConfig {
     }
 
     @Bean
-    public static PropertySourcesPlaceholderConfigurer properties(){
-        PropertySourcesPlaceholderConfigurer propertySourcesPlaceholderConfigurer =new PropertySourcesPlaceholderConfigurer();
-        return  propertySourcesPlaceholderConfigurer;
+    public static PropertySourcesPlaceholderConfigurer properties() {
+        PropertySourcesPlaceholderConfigurer propertySourcesPlaceholderConfigurer = new PropertySourcesPlaceholderConfigurer();
+        return propertySourcesPlaceholderConfigurer;
     }
 }

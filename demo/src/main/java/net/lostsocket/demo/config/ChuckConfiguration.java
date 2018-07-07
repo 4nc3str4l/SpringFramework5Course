@@ -7,7 +7,7 @@ import org.springframework.context.annotation.Configuration;
 
 public class ChuckConfiguration {
 
-    public ChuckNorrisQuotes chuckNorrisQuotes(){
+    public ChuckNorrisQuotes chuckNorrisQuotes() {
         return new ChuckNorrisQuotes();
     }
 }

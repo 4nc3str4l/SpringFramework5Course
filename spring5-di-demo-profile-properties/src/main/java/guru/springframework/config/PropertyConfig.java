@@ -31,7 +31,7 @@ public class PropertyConfig {
     String jmsUrl;
 
     @Bean
-    public FakeDataSource fakeDataSource(){
+    public FakeDataSource fakeDataSource() {
         FakeDataSource fakeDataSource = new FakeDataSource();
         fakeDataSource.setUser(user);
         fakeDataSource.setPassword(password);
@@ -40,7 +40,7 @@ public class PropertyConfig {
     }
 
     @Bean
-    public FakeJmsBroker fakeJmsBroker(){
+    public FakeJmsBroker fakeJmsBroker() {
         FakeJmsBroker jmsBroker = new FakeJmsBroker();
         jmsBroker.setUsername(jmsUsername);
         jmsBroker.setPassword(jmsPassoword);

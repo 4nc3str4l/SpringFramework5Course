@@ -13,7 +13,7 @@ public class GreetingServiceFactory {
 
     public GreetingService createGreetingSevice(String lang) {
 
-        switch (lang){
+        switch (lang) {
             case "en":
                 return new PrimaryGreetingService(greetingRepository);
             case "de":

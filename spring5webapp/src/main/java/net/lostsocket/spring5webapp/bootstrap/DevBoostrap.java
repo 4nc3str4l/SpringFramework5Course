@@ -23,7 +23,7 @@ public class DevBoostrap implements ApplicationListener<ContextRefreshedEvent> {
         this.publisherRepository = publisherRepository;
     }
 
-    private void initData(){
+    private void initData() {
 
         Publisher publisher = new Publisher();
         publisher.setName("Dr Phill");
