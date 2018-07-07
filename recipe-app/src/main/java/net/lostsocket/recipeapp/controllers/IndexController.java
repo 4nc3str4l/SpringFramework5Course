@@ -1,34 +1,23 @@
 package net.lostsocket.recipeapp.controllers;
 
-import net.lostsocket.recipeapp.domain.Category;
-import net.lostsocket.recipeapp.domain.UnitOfMeasure;
-import net.lostsocket.recipeapp.repositories.CategoryRepository;
-import net.lostsocket.recipeapp.repositories.UnitOfMeasureRepository;
+import net.lostsocket.recipeapp.services.RecipeService;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-import java.util.Optional;
-
 @Controller
 public class IndexController {
 
-    private CategoryRepository categoryRepository;
-    private UnitOfMeasureRepository unitOfMeasureRepository;
+    private RecipeService recipeService;
 
-    public IndexController(CategoryRepository categoryRepository, UnitOfMeasureRepository unitOfMeasureRepository) {
-        this.categoryRepository = categoryRepository;
-        this.unitOfMeasureRepository = unitOfMeasureRepository;
+    public IndexController(RecipeService recipeService) {
+        this.recipeService = recipeService;
     }
 
     @RequestMapping({"", "/", "/index"})
     public String getIndexPage(Model model){
 
-        Optional<Category> categoryOptional = categoryRepository.findByDescription("American");
-        Optional<UnitOfMeasure> unitOfMeasureOptional = unitOfMeasureRepository.findByDescription("Teaspoon");
-
-        System.out.println("Cat Id is: " + categoryOptional.get().getId());
-
+        model.addAttribute("recipes", recipeService.getRecipes());
         return "index";
     }
 
